@@ -1,0 +1,20 @@
+spring:
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: /vhost_user_mmr
+    username: user_mmr
+    password: user_mmr
+    listener:
+      simple:
+        concurrency: 10  # 定义消费者数量
+        max-concurrency: 10
+        prefetch: 1 # 每次从队列中取多少条数据
+        auto-startup: true #
+        default-requeue-rejected: true
+
+server:
+  port: 8080
+
+
+
