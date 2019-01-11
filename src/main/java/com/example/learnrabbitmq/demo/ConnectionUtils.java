@@ -13,9 +13,9 @@ public class ConnectionUtils {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("127.0.0.1");
         factory.setPort(5672);
-        factory.setVirtualHost("/vhost_user_mmr");
-        factory.setUsername("user_mmr");
-        factory.setPassword("user_mmr");
+        factory.setVirtualHost("virtualtest");
+        factory.setUsername("admin");
+        factory.setPassword("admin");
 
         return factory.newConnection();
 
