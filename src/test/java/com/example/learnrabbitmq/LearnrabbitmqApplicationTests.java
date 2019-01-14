@@ -1,7 +1,10 @@
 package com.example.learnrabbitmq;
 
+import com.example.learnrabbitmq.bean.MQReceiver;
+import com.example.learnrabbitmq.springdemo.Send;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -9,8 +12,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class LearnrabbitmqApplicationTests {
 
+    @Autowired
+    private Send helloSender;
+
+    @Autowired
+    private MQReceiver mqReceiver;
+
     @Test
-    public void contextLoads() {
+    public void hello() {
+        helloSender.send();
     }
 
 }

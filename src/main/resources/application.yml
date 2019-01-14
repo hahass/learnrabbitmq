@@ -2,9 +2,9 @@ spring:
   rabbitmq:
     host: 127.0.0.1
     port: 5672
-    virtual-host: /vhost_user_mmr
-    username: user_mmr
-    password: user_mmr
+    virtual-host: virtualtest
+    username: admin
+    password: admin
     listener:
       simple:
         concurrency: 10  # 定义消费者数量

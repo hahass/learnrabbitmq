@@ -1,6 +1,6 @@
-package com.example.learnrabbitmq.routing;
+package com.example.learnrabbitmq.javademo.routing;
 
-import com.example.learnrabbitmq.demo.ConnectionUtils;
+import com.example.learnrabbitmq.javademo.demo.ConnectionUtils;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 
@@ -19,7 +19,7 @@ public class Send {
         //2.创建频道
         Channel channel = connection.createChannel();
         //exchange
-        /**
+        /*
          * Declare an exchange.
          * @see com.rabbitmq.client.AMQP.Exchange.Declare
          * @see com.rabbitmq.client.AMQP.Exchange.DeclareOk

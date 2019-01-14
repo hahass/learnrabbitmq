@@ -1,19 +1,19 @@
-package com.example.learnrabbitmq.workfair;
+package com.example.learnrabbitmq.javademo.workfair;
 
-import com.example.learnrabbitmq.demo.ConnectionUtils;
+import com.example.learnrabbitmq.javademo.demo.ConnectionUtils;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
 import java.util.concurrent.TimeoutException;
 
-public class Recv {
+public class Recv2 {
     public static final String Queue_Name = "test_work_queue";
     public static void main(String[] args) throws IOException, TimeoutException {
         Connection connection = ConnectionUtils.getConnection();
         final Channel channel = connection.createChannel();
 
         //声明队列
-        channel.queueDeclare(Queue_Name,false,false,false,null);
+         channel.queueDeclare(Queue_Name,false,false,false,null);
         //保证一次只分发一个
         channel.basicQos(1);
         //定义一个消费者
@@ -24,18 +24,20 @@ public class Recv {
             public void handleDelivery(String consumerTag, Envelope envelope, AMQP.BasicProperties properties, byte[] body) throws IOException {
                 super.handleDelivery(consumerTag, envelope, properties, body);
                 String msg = new String(body ,"utf-8");
-                System.out.println("[1] recv msg:"+msg);
+                System.out.println("[2] recv msg:"+msg);
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }finally {
-                    System.out.println("[1] over");
-                    //手动发送应答
+                    System.out.println("[2] over");
                     channel.basicAck(envelope.getDeliveryTag(),false);
                 }
             }
         };
+
         channel.basicConsume(Queue_Name, false, consumer);
+        
+
     }
 }

@@ -1,6 +1,6 @@
-package com.example.learnrabbitmq.workfair;
+package com.example.learnrabbitmq.javademo.workfair;
 
-import com.example.learnrabbitmq.demo.ConnectionUtils;
+import com.example.learnrabbitmq.javademo.demo.ConnectionUtils;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.Connection;
 

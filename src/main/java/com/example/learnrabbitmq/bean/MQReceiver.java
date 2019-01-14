@@ -9,6 +9,6 @@ public class MQReceiver {
 
     @RabbitListener(queues = MQConfig.QUEUE)
     public void receive(String msg){
-        System.out.println("11"+msg);
+        System.out.println("消费信息："+msg);
     }
 }

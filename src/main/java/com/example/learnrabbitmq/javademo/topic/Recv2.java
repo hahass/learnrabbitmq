@@ -1,6 +1,6 @@
-package com.example.learnrabbitmq.topic;
+package com.example.learnrabbitmq.javademo.topic;
 
-import com.example.learnrabbitmq.demo.ConnectionUtils;
+import com.example.learnrabbitmq.javademo.demo.ConnectionUtils;
 import com.rabbitmq.client.*;
 
 import java.io.IOException;
